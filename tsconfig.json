@@ -1,0 +1,25 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "allowJs": false,
+        "declaration": true,
+        "noEmitOnError" : true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "outDir" : "lib",
+        "module": "commonjs",
+        "target": "ES2017",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "sourceMap": false
+    },
+    "include": [ "src/**/*", "*.ts"],
+    "exclude": [ "node_modules", "lib"],
+    "typeRoots": [
+        "node_modules/@types"
+    ],
+    "types": [
+        "node"
+    ]
+}

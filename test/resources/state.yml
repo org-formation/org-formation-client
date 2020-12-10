@@ -1,0 +1,79 @@
+{
+  "masterAccountId": "111111111111",
+  "bindings": {
+    "OC::ORG::MasterAccount": {
+      "MasterAccount": {
+        "type": "OC::ORG::MasterAccount",
+        "logicalId": "MasterAccount",
+        "physicalId": "111111111111",
+        "lastCommittedHash": "281db6b2c685159c8f11b2c8289abd7b"
+      }
+    },
+    "OC::ORG::OrganizationRoot": {
+      "OrganizationRoot": {
+        "type": "OC::ORG::OrganizationRoot",
+        "logicalId": "OrganizationRoot",
+        "physicalId": "r-root",
+        "lastCommittedHash": "463ccc49120fc666a369bdd74dcfacf0"
+      }
+    },
+    "OC::ORG::Account": {
+      "SharedUsersAccount": {
+        "type": "OC::ORG::Account",
+        "logicalId": "SharedUsersAccount",
+        "physicalId": "11111111112",
+        "lastCommittedHash": "e3b287d6197a305eb08597761544fc5d"
+      },
+      "SharedServicesAccount": {
+        "type": "OC::ORG::Account",
+        "logicalId": "SharedServicesAccount",
+        "physicalId": "11111111113",
+        "lastCommittedHash": "4327c008c5376a30f3f42fbc9bb2a35a"
+      },
+      "SharedComplianceAccount": {
+        "type": "OC::ORG::Account",
+        "logicalId": "SharedComplianceAccount",
+        "physicalId": "11111111114",
+        "lastCommittedHash": "4327c008c5376a30f3f42fbc9bb2a35a"
+      },
+      "DevelopmentAccount": {
+        "type": "OC::ORG::Account",
+        "logicalId": "DevelopmentAccount",
+        "physicalId": "11111111115",
+        "lastCommittedHash": "4327c008c5376a30f3f42fbc9bb2a35a"
+      },
+      "Development2Account": {
+        "type": "OC::ORG::Account",
+        "logicalId": "Development2Account",
+        "physicalId": "11111111116",
+        "lastCommittedHash": "4327c008c5376a30f3f42fbc9bb2a35a"
+      },
+      "Development3Account": {
+        "type": "OC::ORG::Account",
+        "logicalId": "Development3Account",
+        "physicalId": "11111111117",
+        "lastCommittedHash": "4327c008c5376a30f3f42fbc9bb2a35a"
+      },
+      "Development4Account": {
+        "type": "OC::ORG::Account",
+        "logicalId": "Development4Account",
+        "physicalId": "11111111118",
+        "lastCommittedHash": "4327c008c5376a30f3f42fbc9bb2a35a"
+      },
+      "Production1Account": {
+        "type": "OC::ORG::Account",
+        "logicalId": "Production1Account",
+        "physicalId": "11111111119",
+        "lastCommittedHash": "4327c008c5376a30f3f42fbc9bb2a35a"
+      },
+      "Production2Account": {
+        "type": "OC::ORG::Account",
+        "logicalId": "Production2Account",
+        "physicalId": "11111111110",
+        "lastCommittedHash": "4327c008c5376a30f3f42fbc9bb2a35a"
+      }
+    }
+  },
+  "stacks": {},
+  "values": {}
+}
