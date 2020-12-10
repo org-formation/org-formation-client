@@ -1,6 +1,6 @@
 {
     "name": "org-formation-parser",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "description": "parser components used to parse org-formation organization models",
     "scripts": {
         "test": "jest --config jestconfig.json",
@@ -16,9 +16,11 @@
       ],
 
     "dependencies": {
-        "aws-sdk": "^2.807.0",
         "js-yaml": "^3.14.1",
         "md5": "^2.3.0"
+    },
+    "peerDependencies": {
+        "aws-sdk": "~2.0"
     },
     "devDependencies": {
         "@types/jest": "^26.0.18",
