@@ -14,6 +14,7 @@ describe('when parsing basic organization and state file', () => {
 
     test('enumerate account ids from star-binding return all accounts except master', () => {
         const result = parser.enumerateAccountIdsFromBinding({Account: '*'});
+
         expect(result).toBeDefined();
         expect(result).toContain('11111111112');
         expect(result.length).toBe(9);

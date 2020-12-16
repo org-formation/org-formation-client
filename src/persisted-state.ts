@@ -48,6 +48,31 @@ export class PersistedState {
         return result;
     }
 
+    public enumBindings(type: string): IBinding[] {
+        if (this.state.bindings === undefined) {
+            return [];
+        }
+        const typeDict = this.state.bindings[type];
+        if (!typeDict) { return []; }
+
+        const result: IBinding[] = [];
+        for (const key in typeDict) {
+            result.push(typeDict[key]);
+        }
+        return result;
+    }
+
+    getLogicalIdForPhysicalId(physicalId: string): string | undefined {
+        const bindings = this.enumBindings(OrgResourceTypes.Account);
+        bindings.push(...this.enumBindings(OrgResourceTypes.MasterAccount));
+        for(const binding of bindings) {
+            if (binding.physicalId === physicalId) {
+                return binding.logicalId;
+            }
+        }
+        return undefined;
+    }
+
     public getBinding(type: string, logicalId: string): IBinding | undefined {
         const typeDict = this.state.bindings?.[type];
         if (!typeDict) { return undefined; }

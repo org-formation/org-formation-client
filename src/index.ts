@@ -1,4 +1,5 @@
 import S3 from "aws-sdk/clients/s3";
+import { AccountResource } from "./model";
 import { OrgResourceTypes } from "./model/resource-types";
 import { IOrganizationBinding, TemplateRoot } from "./parser";
 import { PersistedState } from "./persisted-state";
@@ -17,6 +18,15 @@ export class Parser {
         const logicalAccountIds = this.template.resolveNormalizedLogicalAccountIds(binding);
         const physicalIds = logicalAccountIds.map(x=>this.persistedState.getAccountBinding(x)?.physicalId);
         return physicalIds;
+    }
+
+    public getAccountResource(accountId: string) : AccountResource {
+        const logicalId = this.persistedState.getLogicalIdForPhysicalId(accountId);
+        if (logicalId === undefined) {
+            return undefined;
+        }
+
+        return this.template.organizationSection.findAccount(x=>x.logicalId === logicalId);
     }
 
     static async FromS3(s3client: S3, bucketName: string, stateObjectKey: string, organizationObjectKey: string) : Promise<Parser> {
