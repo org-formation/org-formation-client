@@ -23,14 +23,14 @@ how to enumerate account ids
 
 ``` js
 const developmentOUBinding: IOrganizationBinding = { OrganizationalUnit: { Ref: 'DevelopmentOU' } };
-const developmentOUAccountIds: string[] = orgClient.enumerateAccountIds(developmentOUBinding);
+const developmentOUAccountIds: string[] = await orgClient.enumerateAccountIds(developmentOUBinding);
 
 const moreComplexBinding: IOrganizationBinding = { IncludeMasterAccount: true, Account: '*', ExcludeAccount: [ { Ref: 'AccountB' } ] };
-const moreComplexAccountIds: string[] = orgClient.enumerateAccountIds(moreComplexBinding);
+const moreComplexAccountIds: string[] = await orgClient.enumerateAccountIds(moreComplexBinding);
 ```
 how to retrieve metadata related to an account:
 ``` js
-const account = orgClient.getAccount('1223123123123');
+const account = await orgClient.getAccount('1223123123123');
 console.log(account.logicalId);
 console.log(account.accountName);
 console.log(account.alias);
