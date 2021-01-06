@@ -69,7 +69,7 @@ export class AccountResource extends Resource {
         this.organizationAccessRoleName = this.props.OrganizationAccessRoleName;
 
         super.throwForUnknownAttributes(resource, id, 'Type', 'Properties');
-        super.throwForUnknownAttributes(this.props, id, 'RootEmail', 'AccountName', 'AccountId', 'Alias', 'ServiceControlPolicies', 'Tags', 'PasswordPolicy', 'SupportLevel', 'OrganizationAccessRoleName');
+        super.throwForUnknownAttributes(this.props, id, 'RootEmail', 'AccountName', 'AccountId', 'Alias', 'ServiceControlPolicies', 'Tags', 'PasswordPolicy', 'SupportLevel', 'OrganizationAccessRoleName', 'BuildAccessRoleName');
     }
 
     public calculateHash(): string {
