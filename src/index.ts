@@ -1,11 +1,10 @@
-import { Organizations } from "aws-sdk";
-import S3 from "aws-sdk/clients/s3";
-import { ConfigurationOptions } from "aws-sdk/lib/core";
+import { Organizations } from "@aws-sdk/client-organizations";
 import { AccountResource } from "./model";
 import { IOrganizationBinding, TemplateRoot } from "./parser";
 import { PersistedState } from "./persisted-state";
+import { S3, S3ClientConfig } from "@aws-sdk/client-s3";
 
-export interface OrgFormationClientConfiguration extends ConfigurationOptions {
+export interface OrgFormationClientConfiguration extends S3ClientConfig {
     stateBucketName?: string;
     stateObjectKey?: string;
     organizationObjectKey?: string;
@@ -54,7 +53,7 @@ export class OrgFormationClient {
 
     private async getDefaultStateBucketName(): Promise<string> {
         const organizations = new Organizations({ ...this.config, region: 'us-east-1'});
-        const describedOrg = await organizations.describeOrganization().promise();
+        const describedOrg = await organizations.describeOrganization({});
         return `organization-formation-${describedOrg.Organization.MasterAccountId}`;
     }
 
@@ -70,7 +69,7 @@ export class OrgFormationClient {
     }
 
     private async getObjectContents(s3client: S3, bucketName: string, key: string) {
-        const stateObject = await s3client.getObject({ Bucket: bucketName, Key: key }).promise();
+        const stateObject = await s3client.getObject({ Bucket: bucketName, Key: key });
         return stateObject.Body.toString();
     }
 }
