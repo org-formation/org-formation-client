@@ -70,7 +70,7 @@ export class OrgFormationClient {
 
     private async getObjectContents(s3client: S3, bucketName: string, key: string) {
         const stateObject = await s3client.getObject({ Bucket: bucketName, Key: key });
-        return stateObject.Body.toString();
+        return stateObject.Body.transformToString("utf-8");
     }
 }
 
